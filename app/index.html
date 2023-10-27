@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Joke's generator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Joke's generator</title>
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet" type="text/css" />
-    <!--    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
 </head>
 <body>
 <main>
@@ -32,8 +32,9 @@
             <input type="radio" id="search" name="queryType" value="search?query=" data-apiUrlPart="search?query="/>
             <label for="search" data-form-class="search-active">Search</label>
             <input class="search_input" type="text" minlength="3" maxlength="120" autofocus placeholder="Free text search...">
+            <div class="search-msg"><span>Kii-YAA-AAA!!!</span> It takes more than three characters for Chuck to start looking for something.</div>
         </div>
-        <button class="form_btn">Get a joke</button>
+        <button class="form_btn"><span>Get a joke</span></button>
     </form>
     <div class="jokes-msg"></div>
     <div class="jokes-block"></div>
