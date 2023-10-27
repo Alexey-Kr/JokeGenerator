@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Joke's generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    <!--    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+</head>
+<body>
+<main>
+    <div class="mob-menu-toggle">
+        <div class="menu-icon"></div>
+        <div class="menu-name">Favourite</div>
+    </div>
+    <div class="label">MSI 2020</div>
+    <h1 class="title">Hey!</h1>
+    <h2 class="subtitle">Let’s try to find a joke for you:</h2>
+    <form>
+        <input class="joke-request-value" type="hidden" value="">
+        <div class="form-element__wrap">
+            <input type="radio" id="random" name="queryType" value="random" data-apiUrlPart="random" checked />
+            <label for="random" data-form-class="random-active">Random</label>
+        </div>
+        <div class="form-element__wrap">
+            <input type="radio" id="categories" name="queryType" value="random?category=" data-apiUrlPart="random?category="/>
+            <label for="categories" data-form-class="categories-active">From caterogies</label>
+            <div class="categories-block"></div>
+        </div>
+        <div class="form-element__wrap">
+            <input type="radio" id="search" name="queryType" value="search?query=" data-apiUrlPart="search?query="/>
+            <label for="search" data-form-class="search-active">Search</label>
+            <input class="search_input" type="text" minlength="3" maxlength="120" autofocus placeholder="Free text search...">
+        </div>
+        <button class="form_btn">Get a joke</button>
+    </form>
+    <div class="jokes-msg"></div>
+    <div class="jokes-block"></div>
+</main>
+<aside>
+    <div class="menu-name menu-name-single">Favourite</div>
+    <div class="mob-menu-toggle">
+        <div class="menu-icon"></div>
+        <div class="menu-name">Favourite</div>
+    </div>
+</aside>
+<script src="js/main.min.js"></script>
+</body>
+</html>
