@@ -1,0 +1,45 @@
+body
+  display: flex
+  justify-content: space-between
+  font-family: 'Roboto', sans-serif
+  min-height: 100vh
+  font-size: 18px
+  line-height: 26px
+  overflow-x: hidden
+  color: $base-color
+main
+  width: 100%
+  max-width: unset
+  margin: 20px auto
+  padding: 0 20px
+  @media (min-width: 600px)
+    margin: 40px auto
+    padding: 0 40px
+  @media (min-width: 1000px)
+    max-width: 760px
+aside
+  width: 100%
+  position: fixed
+  top: 0
+  right: -100%
+  height: 100%
+  padding: 68px 20px 20px
+  overflow: auto
+  background: $white-g
+  transition: 0.2s
+  @media (min-width: 600px)
+    width: 480px
+    min-width: 480px
+    padding: 68px 40px 20px
+  @media (min-width: 1000px)
+    position: static
+    height: auto
+    padding-top: 40px
+.title
+  font-size: 32px
+  font-weight: 700
+  line-height: 44px
+.subtitle
+  font-size: 24px
+  font-weight: 500
+  line-height: 44px

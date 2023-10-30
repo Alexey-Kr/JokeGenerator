@@ -1,0 +1,99 @@
+.joke-card
+  position: relative
+  margin-top: 20px
+  .btn-favorite
+    position: absolute
+    width: 20px
+    height: 17px
+    cursor: pointer
+    background: no-repeat top url('../img/sprite-favor.svg')
+    &:hover
+      animation: pulse-heart 1s linear infinite alternate
+  .joke_body
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: -60px
+      width: 40px
+      height: 40px
+      background: no-repeat center url('../img/icon-message.svg')
+      border-radius: 50%
+  .joke_link
+    font-size: 10px
+    font-weight: 500
+    line-height: 14px
+    color: $secondary-color
+    .joke-link
+      position: relative
+      padding-right: 15px
+      color: $link-color
+      &:after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        width: 10px
+        height: 10px
+        background: no-repeat center url('../img/icon-link.svg')
+  .joke_text
+    margin: 5px 0 23px
+    word-break: break-word
+  .joke_meta
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    .joke_time
+      display: flex
+      font-size: 10px
+      line-height: 14px
+      color: $secondary-color
+    .joke_time-value
+      margin-left: 3px
+      font-weight: 500
+    .joke_category
+      padding: 6px 20px
+      font-size: 10px
+      font-weight: 500
+      line-height: 14px
+      letter-spacing: 2px
+      text-transform: uppercase
+      border-radius: 6px
+      background: $white
+  &.card-favorite
+    .btn-favorite
+      background-position-y: bottom
+.joke-card-standard
+  padding: 47px 20px 20px 80px
+  border-radius: 20px
+  background: $white-g
+  @media (min-width: 600px)
+    padding: 67px 40px 40px 100px
+  .btn-favorite
+    top: 20px
+    right: 20px
+    @media (min-width: 600px)
+      top: 40px
+      right: 40px
+  .joke_body
+    &:before
+      background-color: $white
+.joke-card-mini
+  border-radius: 10px
+  background: $white
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1)
+  padding: 47px 20px 20px 80px
+  .btn-favorite
+    top: 20px
+    right: 20px
+  .joke_body
+    &:before
+      background-color: $white-g
+  .joke_text
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 20px
+  .joke_category
+    display: none
