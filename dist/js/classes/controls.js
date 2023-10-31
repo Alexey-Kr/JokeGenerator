@@ -1,5 +1,6 @@
 import JokeCard from './jokeCard.js';
 export default class Controls {
+
 	constructor() {
 		this.form = document.querySelector('form');
 		this.apiQueryValueInput = document.querySelector('.joke-request-value');
@@ -10,12 +11,14 @@ export default class Controls {
 		this.mobMenuBtns = document.querySelectorAll('.mob-menu-toggle');
 		this.jokeCard = new JokeCard;
 	}
+
 	initControls = () => {
 		this.addMainFormListener();
 		this.addSearchInputListener();
 		this.addRadioBtnListener();
 		this.addMenuButtonsControl();
 	}
+
 	addMainFormListener = () => {
 		this.form.addEventListener('submit', async (e) => {
 			e.preventDefault();
@@ -51,6 +54,7 @@ export default class Controls {
 				});
 		});
 	}
+
 	addSearchInputListener = () => {
 		this.searchInput.addEventListener('keyup', (e) => {
 			if (e.isComposing || e.keyCode === 229) {
@@ -60,6 +64,7 @@ export default class Controls {
 			this.apiQueryValueInput.value = e.target.value;
 		});
 	}
+
 	addRadioBtnListener = () => {
 		this.radioInputs.forEach((el) => {
 			el.addEventListener('change', e => {
@@ -84,6 +89,7 @@ export default class Controls {
 			});
 		})
 	}
+
 	addMenuButtonsControl = () => {
 		this.mobMenuBtns.forEach((el) => {
 			el.addEventListener('click', e => {

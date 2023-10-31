@@ -1,11 +1,14 @@
 export default class JokeCard {
+
 	constructor() {
 		this.prefixForStorageName = 'chuckIds69';
 	}
+
 	init = () => {
 		this.loadFavoriteCardsJoke();
 		this.getRandomJoke();
 	}
+
 	getRandomJoke = async () => {
 		await fetch('https://api.chucknorris.io/jokes/random')
 			.then(res=> res.json())
@@ -14,6 +17,7 @@ export default class JokeCard {
 				document.querySelector('.jokes-block').append(cardStructure);
 			});
 	}
+
 	createJokeCardStructure = (data, cardType = 'standard') => {
 		let div = document.createElement('div');
 
@@ -49,6 +53,7 @@ export default class JokeCard {
 
 		return div.firstElementChild;
 	}
+
 	listenerToBtnFavorite = (btn, data = []) => {
 		btn.addEventListener('click', e => {
 			const {target} = e;
@@ -79,6 +84,7 @@ export default class JokeCard {
 			}
 		});
 	}
+
 	loadFavoriteCardsJoke = () => {
 		Object.keys(localStorage).forEach((key) => {
 			if (key.indexOf(this.prefixForStorageName) !== -1) {
@@ -87,6 +93,7 @@ export default class JokeCard {
 			}
 		});
 	}
+
 	changeDateToHoursAgo = (date) => {
 		let timeStampUpdate = new Date(date).getTime(),
 			currentTimeStamp = new Date().getTime(),
@@ -94,6 +101,7 @@ export default class JokeCard {
 
 		return Math.floor(timeStampDiff/1000/60/60);
 	}
+
 	isFavoriteCard = (cardId) => {
 		return !!localStorage.getItem(this.prefixForStorageName + cardId);
 	}

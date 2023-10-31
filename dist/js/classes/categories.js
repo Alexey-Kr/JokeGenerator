@@ -1,15 +1,18 @@
 export default class Categories {
+
 	constructor() {
 		this.apiQueryValueInput = document.querySelector('.joke-request-value');
 		this.categoriesBlock = document.querySelector('.categories-block');
 		this.setListenersForCategoriesBtn();
 	}
+
 	getCategories = async () => {
 		return fetch('https://api.chucknorris.io/jokes/categories')
 			.then((response) => {
 				return response.json();
 			})
 	}
+
 	createCategoriesStructure = async () => {
 		let categories = await this.getCategories(),
 				categoriesStructure = '';
@@ -21,9 +24,11 @@ export default class Categories {
 
 		return categoriesStructure;
 	}
+
 	drawCategories = async () => {
 		this.categoriesBlock.innerHTML = await this.createCategoriesStructure();
 	}
+
 	setListenersForCategoriesBtn = () => {
 		document.addEventListener('click', e => {
 			const {target} = e;
@@ -34,6 +39,7 @@ export default class Categories {
 			}
 		});
 	}
+
 	removeActiveCategoryClass = () => {
 		let categories = document.querySelectorAll('.categories_item');
 
@@ -41,4 +47,5 @@ export default class Categories {
 			el.classList.remove('active');
 		})
 	}
+
 }
