@@ -22,11 +22,13 @@ export default class Controls {
 	addMainFormListener = () => {
 		this.form.addEventListener('submit', async (e) => {
 			e.preventDefault();
+			this.form.classList.remove('show-search-msg');
 
 			let checkedInput = document.querySelector('input[name=queryType]:checked');
 			let queryType = checkedInput.value;
 			let apiUrl = 'https://api.chucknorris.io/jokes/' + queryType + this.apiQueryValueInput.value;
-			if (queryType.includes('search') && this.apiQueryValueInput.value.length < 4) {
+
+			if (queryType.includes('search') && this.searchInput.value.length < 3) {
 				this.form.classList.add('show-search-msg');
 				return;
 			}
@@ -56,7 +58,7 @@ export default class Controls {
 	}
 
 	addSearchInputListener = () => {
-		this.searchInput.addEventListener('keyup', (e) => {
+		this.searchInput.addEventListener('input', (e) => {
 			if (e.isComposing || e.keyCode === 229) {
 				return;
 			}
