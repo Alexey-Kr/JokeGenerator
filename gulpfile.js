@@ -33,8 +33,8 @@ function watching() {
 			baseDir: "app/"
 		}
 	});
-	watch(['app/scss/style.sass'], styles)
-	watch(['app/js/main.js'], scripts)
+	watch(['app/scss/*/*.*'], styles)
+	watch(['app/js/*/*.js', '!app/js/main.min.js'], scripts)
 	watch(['app/img/src'], images)
 	watch(['app/*.html']).on('change', browserSync.reload)
 }
@@ -45,6 +45,7 @@ function cleanDist() {
 function building() {
 	return src([
 		'app/css/style.min.css',
+		'app/js/classes/*.js',
 		'app/js/main.min.js',
 		'app/img/*.*',
 		'app/**/*.html',

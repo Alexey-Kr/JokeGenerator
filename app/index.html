@@ -20,17 +20,17 @@
     <form>
         <input class="joke-request-value" type="hidden" value="">
         <div class="form-element__wrap">
-            <input type="radio" id="random" name="queryType" value="random" data-apiUrlPart="random" checked />
-            <label for="random" data-form-class="random-active">Random</label>
+            <input type="radio" id="random" name="queryType" value="random" ata-apiUrlPart="random" checked />
+            <label for="random">Random</label>
         </div>
         <div class="form-element__wrap">
             <input type="radio" id="categories" name="queryType" value="random?category=" data-apiUrlPart="random?category="/>
-            <label for="categories" data-form-class="categories-active">From caterogies</label>
+            <label for="categories">From caterogies</label>
             <div class="categories-block"></div>
         </div>
         <div class="form-element__wrap">
             <input type="radio" id="search" name="queryType" value="search?query=" data-apiUrlPart="search?query="/>
-            <label for="search" data-form-class="search-active">Search</label>
+            <label for="search">Search</label>
             <input class="search_input" type="text" minlength="3" maxlength="120" autofocus placeholder="Free text search...">
             <div class="search-msg">It takes more than three characters for Chuck to start looking for something.</div>
         </div>
@@ -46,6 +46,6 @@
         <div class="menu-name">Favourite</div>
     </div>
 </aside>
-<script src="js/main.min.js"></script>
+<script type="module" src="js/main.min.js"></script>
 </body>
 </html>
